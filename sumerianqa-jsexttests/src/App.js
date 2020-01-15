@@ -18,13 +18,10 @@ function App(){
   testCase.printResults();
   testCase.cleanUp();
 
-  var animate = function () {
-    requestAnimationFrame( animate );
-
-    renderer.render( scene, camera );
-  };
-
-  animate(); 
+  renderer.setAnimationLoop(function(){
+    renderer.render(scene,camera);
+  });
+  
   return null;
 };
 
